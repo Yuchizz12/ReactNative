@@ -1,21 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from "react";
+import { AppNavigator } from "./src/navigation/AppNavigator";
+import { UserContext } from "./src/contexts/userContext";
+import { ReviewsContext } from "./src/contexts/reviewsContext";
+import { User } from "./src/types/user";
+import { Review } from "./src/types/review";
 
 export default function App() {
+  const [user, setUser] = useState<User | null>();
+  const [reviews, setReviews] = useState<Review[]>([]);
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <UserContext.Provider value={{ user, setUser }}>
+      <ReviewsContext.Provider value={{ reviews, setReviews }}>
+        <AppNavigator />
+      </ReviewsContext.Provider>
+    </UserContext.Provider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

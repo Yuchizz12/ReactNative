@@ -19,6 +19,16 @@
     "ios": {
       "supportsTablet": true
     },
+    "extra": {
+      "firebase": {
+        "apiKey": "AIzaSyAj6G25jcKcuacp8LQQaBQm2OeKAUCbAjk",
+        "authDomain": "shop-review-36918.firebaseapp.com",
+        "projectId": "shop-review-36918",
+        "storageBucket": "shop-review-36918.appspot.com",
+        "messagingSenderId": "752615435970",
+        "appId": "1:752615435970:web:d7d326b3cd957b5f00d55b"
+      }
+    },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
